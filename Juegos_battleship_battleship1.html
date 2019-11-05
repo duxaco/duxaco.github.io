@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tablero BattleShip</title>
+
+	<link rel="stylesheet" href="bootstrap.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+        
+		var fallas=0;
+		var errores=0;
+		var pego=0;
+		var atino=0;
+		function registra(){
+			var  turno= document.getElementById("turno").value;
+			if(turno ==""){alert("Selecciona un turno"); return}
+}
+		 
+	
+		function Coordenada(posicion){
+			document.getElementById("elementos"+posicion).src="hundido1.jpg";
+			alert("OSTIA TÍO  QUE PILLO, QUE PILLO JODER, OSTIA CHAVAL, PERO SI LE HABÉIS PEGADO:                                                                  Es tu turno Jugador 1");
+            atino ++;
+            if(atino==9){
+            	alert("FELICIDADES Jugador 1 ERES LA GRAN CONCHA, HABÉIS GANADO")
+				return;
+			}
+			return;
+		}
+		function Localizar(posicion){
+			document.getElementById("elemento"+posicion).src="ahogado1.jpg";
+			alert("OSTIA TÍO QUE PILLO, QUE PILLO JODER, OSTIA CHAVAL, PERO SI LE HABÉIS PEGADO:                                                                  Es tu turno Jugador 2" );
+			pego ++;
+            if(pego==9){
+            	alert("FELICIDADES Jugador 2 ERES LA GRAN CONCHA, HABÉIS GANADO")
+				return;
+			}
+			return;
+		}
+		function NoLePego(){
+			alert("JODER TÍO PERO SI LA HABÉIS CAGADO, QUE VA, YA SERA LA PROXIMA:                                                                                Es tu turno Jugador 1");
+			fallas ++;
+			if(fallas==7){
+				alert("HABÉIS PERDIDO Jugador 2, HASTA LA PROXIMA");
+				return;
+			}
+			return;
+		}
+		function NoLeDio(){
+			alert("JODER TÍO PERO SI LA HABÉIS CAGADO, QUE VA, YA SERA LA PROXIMA:                                                                                Es tu turno Jugador 2");
+			errores ++;
+			if(errores==7){
+				alert("HABÉIS PERDIDO Jugador 1, HASTA LA PROXIMA ");
+				return;
+			}
+			return;
+		}
+
+	</script>
+	<style>
+		td {
+
+			width: 100px;
+			height: 100px;
+			background-color:#87CEEB;
+		}
+	</style>
+</head>
+<body style="background-image: url('rayas1.jpg')" onload="carga()">
+	<div class="container">
+		<div class="row text-center">
+			<h1>Juego BattleShip</h1>
+			
+		</div>
+		<div class="text-center">
+			
+		</div><br>
+			<div class="form-group">
+			<label for="">Turno</label>
+			<select id="turno" id="" class="form-control"> 
+			       <option value="" selected>Selecciona</option>
+			       <option value="0">Jugador 1</option>
+			       <option value="1">Jugador 2</option>
+</select>
+</div>
+
+		<div  class="row">
+			<!-- Jugador1 -->
+			<div class="col-xs-6" id="tablero1">
+				<h3>Tablero 1</h3>
+				<table border="1">
+					<tr>
+						<td><img src="sub.jpg" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(1)">Atacar</button>1</td>
+						<td><img src="barco1.png" id="elementos2" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(2)">Atacar</button>2</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(3)">Atacar</button>3</td>
+						<td><img src="barco1.png" id="elementos4" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(4)">Atacar</button>4</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(5)">Atacar</button>5</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(6)">Atacar</button>6</td>
+					</tr>
+					<tr>
+						<td><img src="barco1.png" id="elementos7" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(7)">Atacar</button>7</td>
+						<td><img src="barco1.png" id="elementos8" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(8)">Atacar</button>8</td>
+						<td><img src="sub.jpg" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(9)">Atacar</button>9</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(10)">Atacar</button>10</td>
+						<td><img src="barco1.png" id="elementos11" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(11)">Atacar</button>11</td>
+						<td><img src="sub.jpg" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(12)">Atacar</button>12</td>
+					</tr>
+					<tr><td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(13)">Atacar</button>13</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(14)">Atacar</button>14</td>
+						<td><img src="sub.jpg" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(15)">Atacar</button>15</td>
+						<td><img src="barco1.png" id="elementos16" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(16)">Atacar</button>16</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(17)">Atacar</button>17</td>
+						<td><img src="barco1.png" id="elementos18" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(18)">Atacar</button>18</td>
+					</tr>
+					<tr>
+						<td><img src="barco1.png" id="elementos19" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(19)">Atacar</button>19</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(20)">Atacar</button>20</td>
+						<td><img src="barco1.png" id="elementos21" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(21)">Atacar</button>21</td>
+						<td><img src="barco1.png" id="elementos" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLePego(22)">Atacar</button>22</td>
+						<td><img src="sub.jpg" id="elementos23" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(23)">Atacar</button>23</td>
+						<td><img src="barco1.png" id="elementos24" width="90px"><button style= "background-color:#FFDAB9" onclick="Coordenada(24)">Atacar</button>24</td>
+						
+
+					</tr>
+						
+		   			</tr>
+				</table>
+			</div>
+			<!-- Jugador2 -->
+			<div   style="margin-left: " style="margin-top:  " class="col-xs-6" id="tablero2">
+				<h3>Tablero 2 </h3>
+				<table border="1">
+					<tr>
+						<td><img src="subma.jpg" id="elemento25" width="90px"><button style= "background-color:#FFDAB9"onclick="Localizar(25)">Atacar</button>1</td>
+						<td><img src="barca1.jpg" id="elemento26" width="90px"><button style= "background-color:#FFDAB9"onclick="Localizar(26)">Atacar</button>2</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(27)">Atacar</button>3</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(28)">Atacar</button>4</td>
+						<td><img src="barca1.jpg" id="elemento29" width="90px"><button style= "background-color:#FFDAB9" onclick="Localizar(29)">Atacar</button>5</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(30)">Atacar</button>6</td>
+
+					</tr>
+					<tr>
+						<td><img src="barca1.jpg" id="elemento31" width="90px"><button style= "background-color:#FFDAB9" onclick="Localizar(31)">Atacar</button>7</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLeDio(32)">Atacar</button>8</td>
+						<td><img src="barca1.jpg" id="elemento33" width="90px"><button style= "background-color:#FFDAB9" onclick="Localizar(33)">Atacar</button>9</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(34)">Atacar</button>10</td>
+						<td><img src="barca1.jpg" id="elemento35" width="90px"><button style= "background-color:#FFDAB9"onclick="Localizar(35)">Atacar</button>11</td>
+						<td><img src="subma.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(36)">Atacar</button>12</td>
+					</tr>
+					<tr>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLeDio(37)">Atacar</button>13<br></td>
+						<td><img src="barca1.jpg" id="elemento38" width="90px"><button style= "background-color:#FFDAB9"onclick="Localizar(38)">Atacar</button>14</td>
+						<td><img src="subma.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(39)">Atacar</button>15</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(40)">Atacar</button>16</td>
+						<td><img src="barca1.jpg" id="elemento41" width="90px"><button style= "background-color:#FFDAB9"onclick="Localizar(41)">Atacar</button>17</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9"onclick="NoLeDio(42)">Atacar</button>18</td>
+					</tr>
+					<tr>
+						<td><img src="subma.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLeDio(43)">Atacar</button>19</td>
+						<td><img src="barca1.jpg" id="elemento44" width="90px"><button style= "background-color:#FFDAB9" onclick="Localizar(44)">Atacar</button>20</td>
+						<td><img src="barca1.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLeDio(45)">Atacar</button>21</td>
+						<td><img src="barca1.jpg" id="elemento46" width="90px"><button style= "background-color:#FFDAB9" onclick="Localizar(46)">Atacar</button>22</td>
+						<td><img src="barca1.jpg" id="elemento47" width="90px"><button style= "background-color:#FFDAB9" onclick="Localizar(47)">Atacar</button>23</td>
+						<td><img src="subma.jpg" id="elemento" width="90px"><button style= "background-color:#FFDAB9" onclick="NoLeDio(48)">Atacar</button>24</td>
+					</tr>
+					<tr>
+					
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
